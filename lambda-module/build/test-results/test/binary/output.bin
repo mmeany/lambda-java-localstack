@@ -1,0 +1,35 @@
+ê23:31:44.364 [Test worker] INFO com.example.lambda.LambdaHandler -- Received input: Input[greeting=, timestamp=2025-09-23T22:31:44.364392500Z]
+Y23:31:44.405 [Test worker] INFO com.example.lambda.Processor -- Processing JSON input: 
+Ñ23:31:44.405 [Test worker] INFO com.example.lambda.LambdaHandler -- Processing completed successfully: JSON processed successfully
+e23:31:44.454 [Test worker] INFO com.example.lambda.LambdaHandler -- Received input: Input[greeting={
+    "user": {
+        "id": 1,
+        "name": "John Doe",
+$        "email": "john@example.com"
+    },
+    "items": [
+%        {"id": 1, "name": "Item 1"},
+$        {"id": 2, "name": "Item 2"}
+    ]
+}
+-, timestamp=2025-09-23T22:31:44.454608100Z]
+Y23:31:44.454 [Test worker] INFO com.example.lambda.Processor -- Processing JSON input: {
+    "user": {
+        "id": 1,
+        "name": "John Doe",
+$        "email": "john@example.com"
+    },
+    "items": [
+%        {"id": 1, "name": "Item 1"},
+$        {"id": 2, "name": "Item 2"}
+    ]
+}
+
+Ñ23:31:44.456 [Test worker] INFO com.example.lambda.LambdaHandler -- Processing completed successfully: JSON processed successfully
+ú23:31:44.456 [Test worker] INFO com.example.lambda.LambdaHandler -- Received input: Input[greeting=Test message, timestamp=2025-09-23T22:31:44.456122400Z]
+e23:31:44.456 [Test worker] INFO com.example.lambda.Processor -- Processing JSON input: Test message
+Ñ23:31:44.456 [Test worker] INFO com.example.lambda.LambdaHandler -- Processing completed successfully: JSON processed successfully
+õ23:31:44.456 [Test worker] INFO com.example.lambda.LambdaHandler -- Received input: Input[greeting=Hello World, timestamp=2025-09-23T22:31:44.456122400Z]
+d23:31:44.456 [Test worker] INFO com.example.lambda.Processor -- Processing JSON input: Hello World
+Ñ23:31:44.456 [Test worker] INFO com.example.lambda.LambdaHandler -- Processing completed successfully: JSON processed successfully
+Å23:31:44.467 [Test worker] INFO com.example.lambda.Processor -- Processing JSON input: {"message": "Hello World", "value": 123}

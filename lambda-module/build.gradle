@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation libs.aws.lambda.core
+    //implementation libs.aws.lambda.events
+    //implementation libs.jackson.databind
+    implementation libs.slf4j.api
+    implementation libs.logback.classic
+    
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    
+    testImplementation libs.junit.jupiter
+    testImplementation libs.mockito.core
+    testImplementation libs.mockito.junit.jupiter
+    //testImplementation libs.jackson.databind
+}
+
+task buildZip(type: Zip) {
+    from compileJava
+    from processResources
+    into('lib') {
+        from configurations.runtimeClasspath
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+build.dependsOn buildZip

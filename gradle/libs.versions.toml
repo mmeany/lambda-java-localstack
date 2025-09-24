@@ -1,0 +1,26 @@
+[versions]
+lombok-version = "1.18.30"
+junit-jupiter-version = "5.10.1"
+aws-lambda-java-core-version = "1.2.3"
+aws-lambda-java-events-version = "3.11.3"
+aws-s3-version = "2.28.29"
+jackson-databind-version = "2.16.0"
+slf4j-version = "2.0.9"
+logback-classic-version = "1.5.18"
+shadow-plugin-version = "8.1.1"
+mockito-version = "5.8.0"
+
+[libraries]
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-version" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version" }
+aws-lambda-core = { module = "com.amazonaws:aws-lambda-java-core", version.ref = "aws-lambda-java-core-version" }
+aws-lambda-events = { module = "com.amazonaws:aws-lambda-java-events", version.ref = "aws-lambda-java-events-version" }
+aws-s3 = { module = "software.amazon.awssdk:s3", version.ref = "aws-s3-version"}
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson-databind-version" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j-version" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback-classic-version" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-version" }
+mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito-version" }
+
+[plugins]
+shadow-plugin = { id = "com.github.johnrengelman.shadow", version.ref = "shadow-plugin-version" }

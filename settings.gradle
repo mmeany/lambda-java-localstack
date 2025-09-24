@@ -1,0 +1,5 @@
+rootProject.name = 'lambda-bash'
+
+include 'lambda-module'
+include 'lambda-s3'
+include 'lambda-s3-events'
