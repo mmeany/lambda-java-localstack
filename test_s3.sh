@@ -2,7 +2,7 @@
 
 set -e
 
-pushd /e/docker/localstack-v4/ > /dev/null
+pushd ./compose-localstack-v4 > /dev/null
 
 echo "##"
 echo "## In directory: $(pwd)"
