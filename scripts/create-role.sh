@@ -78,8 +78,8 @@ else
 fi
 
 # Output role ARN to file
-echo "$ROLE_ARN" > role-arn.txt
-echo "Role ARN saved to role-arn.txt: $ROLE_ARN"
+echo "$ROLE_ARN" > .work/role-arn.txt
+echo "Role ARN saved to .work/role-arn.txt: $ROLE_ARN"
 
 # Display the role ARN
 echo "Role ARN: $ROLE_ARN"

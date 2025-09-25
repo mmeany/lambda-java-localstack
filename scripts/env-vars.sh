@@ -35,4 +35,4 @@ END_HEREDOC
 
 aws --profile "$AWS_PROFILE" lambda update-function-configuration \
   --function-name "${FUNCTION_NAME}" \
-  --environment "$JSON_ENV" > function-env.txt
+  --environment "$JSON_ENV" > .work/function-env.txt

@@ -28,7 +28,7 @@ BUCKET="${2:-my-local-bucket}"
 AWS_REGION="${3:-us-east-1}"
 
 
-ARN=$(tr -d '[:space:]' < 'function-arn.txt')
+ARN=$(tr -d '[:space:]' < '.work/function-arn.txt')
 BUCKET_CONFIG="{
     \"LambdaFunctionConfigurations\": [
         {

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# deploy.sh - Deploy Lambda function to AWS
-# Usage: ./deploy.sh <aws-profile> [function-name] [region]
+# deploy-module.sh - Deploy Lambda function to AWS
+# Usage: ./deploy-module.sh <aws-profile> [function-name] [region]
 
 set -e
 
@@ -18,16 +18,16 @@ FUNCTION_NAME="${2:-lambda-bash-function}"
 AWS_REGION="${3:-us-east-1}"
 
 # Read role ARN from file
-if [ ! -f "role-arn.txt" ]; then
-    echo "Error: role-arn.txt file not found"
+if [ ! -f ".work/role-arn.txt" ]; then
+    echo "Error: .work/role-arn.txt file not found"
     echo "Please run ./scripts/create-role.sh first to create the IAM role"
     exit 1
 fi
 
-ROLE_ARN=$(cat role-arn.txt)
+ROLE_ARN=$(cat .work/role-arn.txt)
 
 # Check if Lambda JAR exists
-JAR_FILE="../lambda-module/build/libs/lambda-function.jar"
+JAR_FILE="../lambda-module/build/distributions/lambda-module-1.0.0.zip"
 if [ ! -f "$JAR_FILE" ]; then
     echo "Error: Lambda JAR file not found at $JAR_FILE"
     echo "Please run './gradlew build' first to build the Lambda function"
@@ -74,8 +74,8 @@ fi
 FUNCTION_ARN=$(aws lambda get-function --function-name "$FUNCTION_NAME" --profile "$AWS_PROFILE" --region "$AWS_REGION" --query 'Configuration.FunctionArn' --output text)
 
 # Output function ARN to file
-echo "$FUNCTION_ARN" > function-arn.txt
-echo "Function ARN saved to function-arn.txt: $FUNCTION_ARN"
+echo "$FUNCTION_ARN" > .work/function-arn.txt
+echo "Function ARN saved to .work/function-arn.txt: $FUNCTION_ARN"
 
 echo "Function ARN: $FUNCTION_ARN"
 echo "Deployment completed successfully!"
